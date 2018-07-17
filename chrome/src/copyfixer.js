@@ -8,7 +8,7 @@ function copyfixer(event) {
     if (isSelected()) return;
     var crlf  = isWin ? "\r\n" : "\n";
     var txt   = document.title + crlf + document.location.href + crlf + crlf;
-    chrome.extension.sendRequest({command: "copyfixerCopy", data: txt });
+    chrome.extension.sendMessage({command: "copyfixerCopy", data: txt });
 }
 
 function isSelected() {
